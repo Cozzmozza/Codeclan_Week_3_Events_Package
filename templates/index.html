@@ -1,0 +1,25 @@
+{% extends "base.html"  %}
+
+{% block content %}
+
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Event Name</th>
+        <th>Number of Guests</th>
+        <th>Room Location</th>
+        <th>Description</th>
+    </tr>
+    {% for event in events%}
+    <tr>
+        <td>{{ event.date}}</td>
+        <td>{{ event.name_of_event}}</td>
+        <td>{{ event.number_of_guests}}</td>
+        <td>{{ event.room_location}}</td>
+        <td>{{ event.description}}</td>
+        <td><a href="/events/{{events.index(event)}}">View Event</a></td>
+    </tr>
+    {% endfor%}
+</table>
+{% endblock %}
